@@ -1,0 +1,55 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Sector: MyString
+  BusinessActivity: MyString
+  ReasonPartner: MyString
+  Address: MyString
+  Unity: MyString
+  City: MyString
+  State: MyString
+  Cp: MyString
+  Phone: MyString
+  CellPhone: MyString
+  Email: MyString
+  Website: MyString
+  Boss: MyString
+  Area: MyString
+  PrimarySector: MyString
+  SecondarySector: MyString
+  ThirdSector: MyString
+  LevelStudy: MyString
+  UpdateCourses: MyString
+  Postgraduate: MyString
+  AreaPostgraduate: MyString
+  SocialOrganizations: MyString
+  Which: MyString
+  Committee: MyString
+  Recommendation: MyString
+
+two:
+  Sector: MyString
+  BusinessActivity: MyString
+  ReasonPartner: MyString
+  Address: MyString
+  Unity: MyString
+  City: MyString
+  State: MyString
+  Cp: MyString
+  Phone: MyString
+  CellPhone: MyString
+  Email: MyString
+  Website: MyString
+  Boss: MyString
+  Area: MyString
+  PrimarySector: MyString
+  SecondarySector: MyString
+  ThirdSector: MyString
+  LevelStudy: MyString
+  UpdateCourses: MyString
+  Postgraduate: MyString
+  AreaPostgraduate: MyString
+  SocialOrganizations: MyString
+  Which: MyString
+  Committee: MyString
+  Recommendation: MyString

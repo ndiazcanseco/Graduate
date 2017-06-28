@@ -1,0 +1,22 @@
+
+<table class="table table-bordered table-striped table-hover">
+	<tr>
+		<th>
+			<%= line_chart User.group_by_day(:created_at).count, download: true, width: "400px", height: "300px", colors: ["green", "#99FC04"], discrete: true, xtitle: "Fecha de ingreso", ytitle: "Egresados", refresh: 60%>
+		</th>
+		<<th>
+			<%= pie_chart EmploymentInformation.group(:Profession).count,  width: "400px", height: "300px" %>
+		</th>
+		<th>
+			<%= pie_chart EmploymentInformation.group(:Specialty).count,  width: "400px", height: "300px"%>
+		</th>
+	</tr>
+	<tr>
+		<th>
+			<%= column_chart EmploymentInformation.group_by_day_of_week(:created_at, format: "%a").count %>
+		
+		</th>
+	</tr>
+</table>
+
+

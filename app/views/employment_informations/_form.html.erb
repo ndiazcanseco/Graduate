@@ -1,0 +1,311 @@
+<script type="text/javascript">
+
+function valida_radioquestion6(){
+  var radioB1 = document.getElementById("employment_information_Question_1");
+  var radioB2 = document.getElementById("employment_information_Question6_2");
+
+  var especifique = document.getElementById("especifique");
+
+
+if (radioB2.checked == true) { 
+  especifique.style.display = "inline-block";
+ }else{
+  especifique.style.display = "none";
+ }
+}
+</script>
+<script type="text/javascript">
+function valida_radioquestion12(){
+ 
+  var radioB2 = document.getElementById("employment_information_Question12_2");
+
+  var especifique12 = document.getElementById("especifique12");
+
+
+if (radioB2.checked == true) { 
+  especifique12.style.display = "inline-block";
+ }else{
+  especifique12.style.display = "none";
+ }
+}
+</script>
+<script type="text/javascript">
+function valida_estudia(){
+
+  
+  var radioB5 = document.getElementById("employment_information_Question2_1");
+
+  var especialidad = document.getElementById("especialidad");
+  var institucion = document.getElementById("institucion");
+
+
+if (radioB5.checked == true) { 
+  especialidad.style.display = "inline-block";
+  institucion.style.display = "inline-block";
+ }else{
+  especialidad.style.display = "none";
+  institucion.style.display = "none";
+ }
+}
+</script>
+<%= stylesheet_link_tag "personal.css" %>
+
+<%= form_for(employment_information) do |f| %>
+  <% if employment_information.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(employment_information.errors.count, "error") %> prohibited this employment_information from being saved:</h2>
+
+      <ul>
+      <% employment_information.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+ 
+    <HR>
+       <h4><strong>INSTRUCCIONES: Indique a cuál de los siguientes puntos corresponde su situación actual.</strong> </h4>
+    </HR>
+   
+<div class="contenedor-formulario">
+    <div class="wrap">
+       <br></br>
+  <table class="table table-bordered table-striped table-hover">
+ <tr>
+   <th><div class="field">
+
+        <h4>1.- Actividad a la que se dedica actualmente:</h4>
+        <% question1s ={'Trabaja' => 'Trabaja', 'Estudia'=> 'Estudia','Estudia y trabaja'=> 'Estudia y trabaja', 'No estudia ni trabaja' => 'No estudia ni trabaja'}%>
+        <fieldset>
+
+          <% lista = question1s %>
+          <% lista.each do |question1|%>
+          <%= f.radio_button :Question1, question1[1] %>
+          <label style="margin-right: 60px;"> <for= "<%= question1[1]%>"><%= question1[0]%></label>
+          <% end %>
+        </fieldset>
+      </div></th>
+     
+ </tr>
+ <tr>
+   <th>
+     <p>2.- Si estudia, indicar si es:</p>
+      <div class="field" >
+        <% question2s ={'Especialidad' => 'Especialidad', 'Maestria'=> 'Maestria', 'Doctorado' => 'Doctorado', 'Idiomas' => 'idiomas','Otros' => '1'}%>
+        <fieldset>
+          <% lista = question2s %>
+          <% lista.each do |question2|%>
+          <%= f.radio_button :Question2, question2[1],required:"required",onClick:"valida_estudia()" %>
+          <label style="margin-right: 60px;"> <for= "<%= question2[1]%>"><%= question2[0]%></label>
+          <% end %>
+         
+        </fieldset>
+      </div>
+      <div id="field" style="position: relative;margin: 40px">
+          <div id="especialidad" style="position:relative;width: 320px;float: left;display:none;text-align: left;margin-right: 30px;">
+            <%= f.label :Question2S,"Especialidad" %>
+            <%= f.text_field :Question2S,class:"form-control",type:"text" %>
+          </div>
+
+          <div id="institucion" style="position:relative;width: 320px;;display:none;text-align: left">
+            <%= f.label :Question2I,"Institución" %>
+            <%= f.text_field :Question2I ,class:"form-control"%>
+          </div>
+   </th>
+ </tr>
+ <tr>
+   <th>
+     <p>3.- En caso de trabajar: Tiempo transcurrido para obtener el primer empleo:</p>
+
+      <div class="field" >
+        <% question3s ={'Antes de egresar' => 'Antes de egresar', 'Menos de seis meses'=> 'Menos de seis meses', 'Entre seis meses y un año' => 'Entre seis meses y un año','Más de un año'=> 'Más de un año',}%>
+        <fieldset>
+          <% lista = question3s %>
+          <% lista.each do |question3|%>
+          <%= f.radio_button :Question3, question3[1] %>
+          <label style="margin-right: 20px;" <for=0 "<%= question3[1]%>"><%=  question3[0]%></label>
+          <% end %>
+        </fieldset>
+      </div>
+   </th>
+ </tr>
+ <tr>
+   <th>
+     <p>4.- Medios para obtener el primer empleo:</p>
+
+      <div class="field" >
+          <% question4s ={'Contactos personales' => 'Contactos personales', 'Residencia profesional'=> 'Residencia profesional', 'Medios masivos de comunicación' => 'Medios masivos de comunicación'}%>
+        <fieldset>
+          <% lista = question4s %>
+          <% lista.each do |question4|%>
+          <%= f.radio_button :Question4, question4[1] %>
+          <label style="margin-right: 30px;" <for= "<%= question4[1]%>"><%= question4[0]%></label>
+          <% end %>
+        </fieldset>
+      </div>
+   </th>
+ </tr>
+ <tr>
+   <th>
+     <p>5.- Requisitos de contratación:</p>
+      <div class="field" >
+        <% question5s ={'Título profesional' => 'Título profesional', 'Examen de selección'=> 'Examen de selección', 'Idioma extranjero' => 'Idioma extranjero', 'Experiencia laboral' => 'Experiencia laboral'}%>
+        <fieldset>
+          <% lista = question5s %>
+          <% lista.each do |question5|%>
+          <%= f.radio_button :Question5 , question5[1] %>
+          <label style="margin-right: 30px;" <for= "<%= question5[1]%>"><%= question5[0]%></label>
+          <% end %>
+        </fieldset>
+      </div>
+   </th>
+ </tr>
+ <tr>
+   <th>
+     <p>6.- Actitudes y habilidades socio-comunicativas (principios y valores):</p>
+
+      <div class="field">
+          <div style="text-align: center;">
+            <% question6s ={'Ninguno' => '1', 'Otros'=> '2'}%>
+        <fieldset>
+          <% lista = question6s.sort %>
+          <% lista.each do |question6|%>
+          <%= f.radio_button :Question6, question6[1],required:"required",onClick:"valida_radioquestion6()" %>
+          <label style="margin-right: 50px;" <for= "<%= question6[1]%>"><%= question6[0]%></label>
+          <% end %>
+
+
+
+   
+
+            <div id="especifique" style="position: relative;width: 250px;display: none;">
+                <%= f.label :Question6S,"Especifique" %>
+                <%= f.text_field :Question6S,class:"form-control",type:"text"%>
+           </div>
+
+          </div>
+        </fieldset>
+      </div>
+   </th>
+ </tr>
+ <tr>
+   <th>
+     <p>8.- En qué proporción utiliza en el desempeño de sus actividades laborales cada una de las habilidades del idioma extranjero(%):</p>
+
+      <div class="field">
+
+        <div class="field" style="position: relative;width: 100px;display: inline-block;margin-right: 40px;">
+          <%= f.label :Speaks,"Habla" %>
+          <%= f.text_field :Speaks,class:"form-control"%>
+        </div>
+
+        <div class="field" style="position: relative;width: 100px;display: inline-block;margin-right: 40px;">
+          <%= f.label :Writes,"Escribe" %>
+          <%= f.text_field :Writes,class:"form-control" %>
+        </div>
+
+        <div class="field" style="position: relative;width: 100px;display: inline-block;margin-right: 40px;">
+          <%= f.label :Read,"Lee" %>
+          <%= f.text_field :Read,class:"form-control" %>
+        </div>
+
+        <div class="field" style="position: relative;width: 100px;display: inline-block;margin-right: 40px;">
+          <%= f.label :ListenTo,"Escucha" %>
+          <%= f.text_field :ListenTo,class:"form-control" %>
+        </div>
+      </div>
+   </th>
+ </tr>
+ <tr>
+   <th>
+     <p>9.- Antigüedad en el empleo:</p>
+  
+
+    <%= f.label :Question9, "Fecha de contratación" %></br>
+    <%= f.text_field :Question9, 'data-provide' => 'datepicker'  %>
+
+    
+    </div>
+   </th>
+ </tr>
+ <tr>
+   <th>
+     <p>10.- Antigüedad en el empleo:</p>
+  <div class="field">
+    <% question10s ={'Salario minimo' => '1', 'Entre 2 y 3'=> '2', 'Entre 5 y 8'=> '3', 'Mas de 10'=> '4'}%>
+    <fieldset>
+      <% lista = question10s.sort %>
+      <% lista.each do |question10| %>
+      <%= f.radio_button :Question10,  question10[1] %>
+      <label style="margin-right: 40px;" <for= "<%= question10[1]%>"><%= question10[0]%></label>
+      <% end %>
+    </fieldset>
+
+   </th>
+ </tr>
+ <tr>
+   <th>
+     <p>11.- Nivel jerárquico en el trabajo:</p>
+  <div class="field">
+     <% question11s ={'Técnico superior' => '1', 'Jefe de área'=> '2', 'Funcionario'=> '3', 'Directivo'=> '4', 'Empresario'=> '5'}%>
+    <fieldset>
+      <% lista = question11s.sort %>
+      <% lista.each do |question11| %>
+      <%= f.radio_button :Question11, question11[1] %>
+      <label style="margin-right: 40px;" <for= "<%= question11[1]%>"><%= question11[0]%></label>
+      <% end %>
+    </fieldset>
+  </div>
+   </th>
+ </tr>
+ <tr>
+   <th>
+     <p>12.- Condición de trabajo:</p>
+  <div class="field">
+      <% question12s ={'Base' => 'Base', 'Eventual'=> 'Eventual', 'Contrato'=> 'Contrato', 'Otros'=> '2'}%>
+    <fieldset>
+      <% lista = question12s.sort %>
+      <% lista.each do |question12| %>
+      <%= f.radio_button :Question12, question12[1],required:"required",onClick:"valida_radioquestion12()" %>
+      <label style="margin-right: 40px;" <for= "<%= question12[1]%>"><%= question12[0]%></label>
+      <% end %>
+
+      <div id="especifique12" style="position: relative;width: 250px;display:none;">
+        <%= f.label :Question12O,"Especifique" %>
+        <%= f.text_field :Question12O,class:"form-control" %>
+      </div>
+    </fieldset>
+  </div>
+   </th>
+ </tr>
+ <tr>
+   <th>
+     <p>13.- Relación del trabajo con su área de formación:</p>
+  
+  
+      <div class="field">
+        <% question13s ={'0%' => '1', '20%'=> '2', '60%'=> '3', '80%'=> '4', '100%'=> '4'}%>
+        <fieldset>
+          <% lista = question13s.sort %>
+          <% lista.each do |question13| %>
+          <%= f.radio_button :Question13, question13[1] %>
+          <label style="margin-right: 40px;" <for= "<%= question13[1]%>"><%= question13[0]%></label>
+          <% end %>
+        </fieldset>
+      </div>
+   </th>
+ </tr>
+ 
+</table>
+      
+
+<div class="actions" class="btn btn-primary"  style="float: right;">
+        <input type="submit" name="guardar" value="Guardar y Continuar">
+     </div>
+     </div>
+<% end %>
+
+

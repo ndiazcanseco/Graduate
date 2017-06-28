@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Question1: MyString
+  Question2: MyString
+  Question2S: MyString
+  Question2I: MyString
+  Question3: MyString
+  Question4: MyString
+  Question5: MyString
+  Question6: MyString
+  Question6S: MyString
+  Question7: MyString
+  Question7O: MyString
+  Speaks: 1
+  Writes: 1
+  Read: 1
+  ListenTo: 1
+  Question9: 2017-06-06
+  Question10: MyString
+  Question11: MyString
+  Question12: MyString
+  Question12O: MyString
+  Question13: MyString
+
+two:
+  Question1: MyString
+  Question2: MyString
+  Question2S: MyString
+  Question2I: MyString
+  Question3: MyString
+  Question4: MyString
+  Question5: MyString
+  Question6: MyString
+  Question6S: MyString
+  Question7: MyString
+  Question7O: MyString
+  Speaks: 1
+  Writes: 1
+  Read: 1
+  ListenTo: 1
+  Question9: 2017-06-06
+  Question10: MyString
+  Question11: MyString
+  Question12: MyString
+  Question12O: MyString
+  Question13: MyString

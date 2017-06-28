@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Quality: MyString
+  Studies: MyString
+  Projects: MyString
+  Investigation: MyString
+  Infrastructure: MyString
+  Experience: MyString
+
+two:
+  Quality: MyString
+  Studies: MyString
+  Projects: MyString
+  Investigation: MyString
+  Infrastructure: MyString
+  Experience: MyString

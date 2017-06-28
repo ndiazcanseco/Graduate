@@ -1,0 +1,57 @@
+ul{
+		list-style: none;
+
+	}
+
+	li{
+		list-style: none;
+	}
+ 
+	.menu-nav ul li a {
+
+		display: inline-block;
+		color:#fff;
+		background: #e8f5e9;
+		padding: 10px 15px;
+		width: 200px;
+
+		text-decoration: none;
+		-webkit-transition:all 500ms ease;
+		-o-transition:all 500ms ease;
+		transition:all 500ms ease; /* Establecemos una transición a todas las propiedades */
+
+
+	}
+ 
+	.menu-nav ul li .btn-egresado {
+		background:#b0bec5;
+		} /* Establecemos los colores de cada red social, aprovechando su class */
+	.menu-nav ul li .btn-laboral {background: #78909c;}
+	.menu-nav ul li .btn-empresa {background: #cfd8dc;
+	}
+	
+ 
+	.menu-nav ul li a:hover {
+		background: #e8f5e9; /* Cambiamos el fondo cuando el usuario pase el mouse */
+		padding: 10px 30px; /* Hacemos mas grande el espacio cuando el usuario pase el mouse */
+	}
+
+
+.field{
+	text-align: center;
+}
+
+
+p{
+	font-size: 15px;
+	color: black;
+}
+
+
+
+
+
+#resultado.ok {
+    background-color: green;
+    color: white;
+}

@@ -1,0 +1,153 @@
+<%= form_for(personal_information) do |f| %>
+  <% if personal_information.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(personal_information.errors.count, "error") %> prohibited this personal_information from being saved:</h2>
+
+      <ul>
+      <% personal_information.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h4><b>PERFIL DEL EGRESADO </b><H4><HR>
+
+  
+      <div>
+        <div class="field" style="text-align: left">
+          <%= f.label :FirstName, "Nombre(s)"%>
+              <%= f.text_field :FirstName,class:"form-control",placeholder: 'Osmar Neftali',required:"required",type:"text"%>
+           
+        </div>
+        <br>
+        
+        <div class="field" style="text-align: left:100px;width: 370px;display: inline-block;float:left;">
+          <%= f.label :FirstLastName, "Apellido paterno" %>
+          <%= f.text_field :FirstLastName,placeholder: 'Diaz',class: "form-control",required:"required",type:"text" %>
+        </div>
+   
+        <div class="field" style="text-align: left;width: 370px;display: inline-block;float: right;">
+          <%= f.label :SecondLastName, "Apellido materno" %>
+          <%= f.text_field :SecondLastName ,placeholder: 'Canseco',class:"form-control",required:"required",type:"text"%>
+        </div>
+      </div>
+
+      <div>
+        <div class="field" style="text-align: left;width: 370px;display: inline-block;"><br>
+          <%= f.label :ControlNumber, "No. de control" %>
+          <%= f.text_field :ControlNumber ,placeholder: '11920244',class:"form-control",required:"required",type:"text",maxlength:"8",id:"ControlNumber",onchange:"validate(this)"%>
+        </div>
+   
+        <div class="field" style="text-align: left;width: 370px;display: inline-block;float: right;"><br>
+          <%= f.label :Birthdate, "Fecha de Nacimiento" %></br>
+          <%= f.text_field :Birthdate, 'data-provide' => 'datepicker'  %>
+        </div>
+        <br>
+        </BR>
+        
+        <div class="field" style="text-align: left;width: 370px;display: inline-block;">
+          <%= f.label :Curp, "CURP" %>
+          <%= f.text_field :Curp,class:"form-control", required:"required",type:"text",required:"required",maxlength:"18",id:"Curp_input",oninput:"validarInput(this)" %>
+    <input readonly id="resultado" class="form-control">
+        </div>
+  
+        <div class="field" style="text-align: left;width: 370px;display: inline-block;float: right;1">
+          <%= f.label :Phone, "Telefono" %>
+          <%= f.text_field :Phone,class:"form-control",required:"required",type:"text",maxlength:"10",id:"Phone",onchange:"validate_tel(this)"%>
+        </div>
+      </div>
+
+
+  
+
+      <hr></br>
+
+      <div class="field" style="text-align: left">
+        <%= f.label :Address, "Domicilio"  %>
+        <%= f.text_field :Address,placeholder: 'Avenida Revolucion',class:"form-control",required:"required",type:"text" %>
+      </div>
+
+      <div> 
+        <div class="field" style="text-align: left;width: 250px;display: inline-block;"></br>
+          <%= f.label :Unity, "Colnia" %>
+          <%= f.text_field :Unity,placeholder: 'La esperanza',class:"form-control",required:"required",type:"text" %>
+        </div>
+   
+        <div class="field" style="text-align: left;width: 250px;display: inline-block;"></br>
+          <%= f.label :City, "Municipio" %>
+          <%= f.text_field :City,placeholder: 'Ocotlan de Morelos',class:"form-control",required:"required",type:"text"  %>
+        </div>
+
+        <div class="field" style="text-align: left;width: 260px;display: inline-block;float: right;"></br>
+          <%= f.label :State, "Estado" %>
+         <%= f.select :State, options_for_select(["Aguascalientes","Baja California","Baja California Sur","Campeche","Coahuila de Zaragoza","Colima","Chiapas","Chihuahua","Distrito Federal","Durango","Guanajuato","Guerrero","Hidalgo","Jalisco","México","Michoacán de Ocampo","Morelos","Nayarit","Nuevo León","Oaxaca","Puebla","Querétaro","Quintana Roo","San Luis Potosí","Sinaloa","Sonora","Tabasco","Tamaulipas","Tlaxcala","Veracruz de Ignacio de la Llave","Yucatán","Zacatecas"]), {}, class: "form-control" %> 
+        </div>
+         
+       
+      </div><br></br>
+ 
+      <div class="field"  style="text-align: left;width: 370px;display: inline-block;">
+        <%= f.label :Profession, "Carrera" %>
+        <%= f.select :Profession, options_for_select(["Ing. en Agronomia","Lic. en Biologia","Ing. en Forestal","Ing. en Informatica","Ing. en TIC's"]), {}, class: "form-control" %> <br>
+      </div>
+
+  
+      <div class="field" style="text-align: left;width: 370px;display: inline-block;float: right;">
+        <%= f.label :Monthandyears, "Mes y año de Egreso" %>
+        <%= f.text_field :Monthandyears, 'data-provide' => 'datepicker'  %>
+      </div>
+
+      <div>  
+
+        <div class="field"  style="text-align: left;width: 370px;display: inline-block;float: left;">
+        <%= f.label :Specialty, "Especialidad" %>
+        <%= f.select :Specialty, options_for_select(["Specialty Agronomia","Specialty Biologia","Specialty Forestal","Specialty Informatica","Specialty TIC's"]), {}, class: "form-control" %> <br>
+         
+      </div>
+      <div class="field" style="text-align: left;width: 370px;display: inline-block;float: right;">
+
+           <%= f.label :Language, "Dominio de idioma extrangero: Ingles" %>
+
+           <div class="field" style="text-align: left;width: 200px;display: inline-block;float: right:200px">
+           
+              <%= f.select :Specialty, options_for_select(["0","5","10","15","20","25","30","35","40","45","50","55","60","65","70","75","80","85","90","95","100"]), {}, class: "form-control" %>
+
+              <br>
+          </div>
+      </div>
+           
+
+
+  
+      
+
+ <div class="field" style="text-align: left" placeholder="Campo de texto">
+        <br></br><br></br><%= f.label :Computing, "Habilidades Informaticas" %>
+        <%= f.text_field :Computing,class: "form-control"  %><br>
+      </div>
+      
+ <div class="field" style="text-align: left" placeholder="Campo de texto">
+       <%= f.label :Titulo, "Titulado(a)" %>
+      
+        <% titulados ={'SI' => 'SI', 'NO'=> 'NO'}%>
+        <fieldset>
+          <% lista = titulados %>
+          <% lista.each do |titulado|%>
+          <%= f.radio_button :Titulo, titulado[1],required:"required" %>
+          <label style="margin-right: 60px;"> <for= "<%= titulado[1]%>"><%= titulado[0]%></label>
+          <% end %>
+        </fieldset>
+
+      </div>
+      
+      <div class="actions" class="btn btn-primary"  style="float: right;">
+        <input type="submit" name="guardar" value="Guardar y Continuar">
+     
+       </div><br></br>
+
+  </div>
+<% end %>
+
+
+

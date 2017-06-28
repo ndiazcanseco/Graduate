@@ -1,0 +1,223 @@
+<%= form_for(company_information) do |f| %>
+  <% if company_information.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(company_information.errors.count, "error") %> prohibited this company_information from being saved:</h2>
+
+      <ul>
+      <% company_information.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <HR>
+  <div class="contenedor-formulario">
+    <div class="wrap">
+    <table class="table table-bordered table-striped table-hover">
+      <tr>
+        <th>
+         <div class="field" style="text-align: left;width: 370px;display: inline-block;float: left;">
+            <%= f.label :Sector, "1. Organismo" %>
+           <div class="field">
+             <% pgta1s ={'Publico' => '1', 'Social'=> '2', 'Privado' => '3'}%>
+            <fieldset>
+             <% lista = pgta1s.sort %>
+             <% lista.each do |pgta1|%>
+             <%= f.radio_button :Sector, pgta1[1] %>
+             <label style="margin-right: 50px;" <for= "<%= pgta1[1]%>"><%= pgta1[0]%></label>
+             <% end %>
+             </div>
+          </div>
+          <div>
+          <div class="field" style="margin-right: left;width: 380px;display: inline-block;float: right;">
+           <%= f.label :BusinessActivityector, "2.- Giro o actividad principal de la empresa u organizacion:" %>
+            <%= f.text_field :BusinessActivity,class:"form-control" %>
+            </div><br></br><br></br><br></br>
+            <div class="field" style="margin-right: -20px;width: 470px;display: inline-block;float: right;">
+          
+              <p>4.- Domicilio:</p>
+              <%= f.text_field :Address ,class:"form-control"  %>
+            </div>
+            <div class="field" style="margin-right: 60px; width: 300px;">
+             <p style="text-align: left;margin: 0px;">3.- Razon Social:</p>
+              <%= f.text_field :ReasonPartner ,class:"form-control" %>
+          </div>
+      
+         
+            </div>
+            </div><br>
+
+            <div class="field" style="width: 190px;text-align: left;display: inline-block;">
+    <%= f.label :Unity,"Colonia" %>
+    <%= f.text_field :Unity ,class:"form-control" %>
+  </div>
+
+  <div class="field" style="width: 195px;text-align: left;display: inline-block;">
+    <%= f.label :City,"Municipio" %>
+    <%= f.text_field :City,class:"form-control"  %>
+  </div>
+
+  <div class="field" style="width: 195px;text-align: left;display: inline-block;">
+    <%= f.label :City ,"Estado" %>
+    <%= f.text_field :City  ,class:"form-control" %>
+  </div>
+  <div class="field" style="width: 110px;text-align: left;display: inline-block;">
+    <%= f.label :Cp ,"C.P" %>
+    <%= f.text_field :Cp  ,class:"form-control" %>
+  </div>
+  
+
+  <div class="field" style="text-align: left;width: 340px;display: inline-block;float:left;">
+    <%= f.label :Phone, "Telefono" %>
+    <%= f.text_field :Phone ,class: "form-control" %>
+  </div>
+  
+<div class="field" style="width: 340px;text-align: left;display: inline-block;float: right;">
+    <%= f.label :Email,"E-mail" %>
+    <%= f.text_field :Email, class: "form-control"  %>
+  </div>
+
+  <div class="field" style="text-align: left;width: 350px;display: inline-block;float:left;">
+    <%= f.label :CellPhone ,"Celular" %>
+    <%= f.text_field :CellPhone, class: "form-control" %>
+  
+
+</div>
+
+ <div class="field" style="width: 340px;text-align: left;display: inline-block;float: right;">
+    <%= f.label :Website,"Pagina web" %>
+    <%= f.text_field :Website, class: "form-control"  %>
+  </div>
+
+</div>
+        </th>
+     </tr>
+     <tr>
+       <th>
+       <br></br>
+         <div class="field" style="text-align: left;">
+  <p style="text-align: left;margin: 0px;">5.- Nombre y puesto del jefe inmediato:</p>
+    <%= f.text_field :Boss,class:"form-control"  %>
+  </div>
+
+  <div class="field" style="text-align: left;">
+  <p style="text-align: left;margin: 0px;">Área de abscripción:</p>
+    <%= f.text_field :Area ,class:"form-control" %>
+  </div>
+
+
+    <p style="text-align: left;margin: 0px;">6.- Sector económico de la empresa u organización.</p>
+  <div class="field" style="margin-top: 20px;">
+  <p style="text-align: left;margin: 0px;">Sector primario:</p>
+  <% pgta10s ={'Agropecuario' => '1', 'Pesquero'=> '2', 'Minero' => '3', 'otros' => '4'}%>
+  <fieldset>
+    <% lista = pgta10s.sort %>
+    <% lista.each do |pgta10|%>
+    <%= f.radio_button :PrimarySector , pgta10[1] %>
+    <label style="margin-right: 60px; " <for= "<%= pgta10[1]%>"><%= pgta10[0]%></label>
+    <% end %>
+  </fieldset>
+</div>
+
+<div class="field" style="margin-top: 20px;">
+  <p style="text-align: left;margin: 0px;">Sector secundario:</p>
+  <% pgta11s ={'Industria' => '1', 'Construccion'=> '2', 'petroleo' => '3', 'otros' => '3'}%>
+  <fieldset>
+    <% lista = pgta11s.sort %>
+    <% lista.each do |pgta11|%>
+    <%= f.radio_button :SecondarySector, pgta11[1] %>
+    <label style="margin-right: 40px; " <for= "<%= pgta11[1]%>"><%= pgta11[0]%></label>
+    <% end %>
+  </fieldset>
+  </div>
+
+   <div class="field" style="margin-top: 20px;">
+  <p style="text-align: left;margin: 0px;">Sector Terceario:</p>
+  <% pgta12s ={'Turismo' => '1', 'Comercio'=> '2', 'servicios Finacieros' => '3', 'otros' => '3'}%>
+  <fieldset>
+    <% lista = pgta12s.sort %>
+    <% lista.each do |pgta12|%>
+    <%= f.radio_button :ThirdSector, pgta12[1] %>
+    <label style="margin-right: 40px; " < for= "<%= pgta12[1]%>"><%= pgta12[0]%></label>
+    <% end %>
+
+<div class="field" style="text-align: left;margin-top: 20px;">
+    <p style="text-align: left;margin: 0px;">7.- Grado maximo de estudios al que aspiras:</p>
+    <%= f.text_field :LevelStudy ,class:"form-control"%>
+  </div>
+ 
+<div class="field">
+  <p style="text-align: left;margin: 0px;margin-top: 20px;">8.- Que cursos de actualizacion te gustariaque te ofertaramos:</p>
+    <%= f.text_field :UpdateCourses  ,class:"form-control"%>
+  </div>
+    <div class="field" style="text-align: left;margin-top: 20px;">
+    <p style="text-align: left;margin: 0px;margin-top: 20px;">9.- Cuál es el posgrado que te gustaría cursar:</p>
+    <%= f.text_field :Postgraduate ,class:"form-control"%>
+  </div>
+  <div class="field">
+  <p style="text-align: left;margin: 0px;margin-top: 20px;">10.- A que area de conocimiento pertenece el posgrado que te gustaria tomar:</p>
+    <%= f.text_field :AreaPostgraduate,class:"form-control" %>
+  </div>
+
+ 
+ <p style="text-align: left;margin: 0px;margin-top: 20px;">11.- Pertece a organizaciones sociales:</p>
+  <div class="field">
+  <% pgta17s ={'SI' => 'SI', 'NO'=> 'No'}%>
+  <fieldset>
+    <% lista = pgta17s %>
+    <% lista.each do |pgta17|%>
+    <%= f.radio_button :SocialOrganizations, pgta17[1] %>
+    <label style="margin-right: 40px; for= "<%= pgta17[1]%>"><%= pgta17[0]%></label>
+    <% end %>
+
+  </fieldset>
+ 
+ <div class="field" style="text-align: left;margin-top: 20px;">
+    <%= f.label :Which,"Cuales" %>
+    <%= f.text_field :Which ,class:"form-control"%>
+  </div>
+  
+ <p style="text-align: left;margin: 0px;margin-top: 20px;">12.- Pertece a organizaciones de profecionistas:</p>
+  <div class="field">
+  <% pgta18os ={'SI' => 'SI', 'NO'=> 'No'}%>
+  <fieldset>
+    <% lista = pgta18os %>
+    <% lista.each do |pgta18o|%>
+    <%= f.radio_button :Committee, pgta18o[1],required:"required"%>
+    <label style="margin-right: 40px; <for= "<%= pgta18o[1]%>"><%= pgta18o[0]%></label>
+    <% end %>
+</fieldset>
+</div>
+
+
+
+  
+   <p style="text-align: left;margin: 0px;margin-top: 20px;">Opinion o recomendacion para mejorar la formacion profecional de un egresado de su carrera:</p>
+  <div class="field">
+    <%= f.text_area :Recommendation ,class:"form-control"%>
+
+
+  <div class="actions" class="btn btn-primary"  style="float: right;">
+        <input type="submit" name="guardar" value="Guardar y Continuar">
+       </th>
+     </tr>
+    </table>
+
+   
+   
+ 
+
+  
+
+</div>
+
+
+<div style="margin: 40px;">
+
+ 
+  
+<% end %>
+
+</div>
+</div>

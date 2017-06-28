@@ -1,0 +1,54 @@
+<%= stylesheet_link_tag "personal.css" %>
+
+
+<div class="row center-xs">
+  <div class="col-xs-8 col-md-6">
+    <div class="box">
+      <h2>Iniciar Sesión</h2>
+
+
+
+
+
+<div class="panel panel-primary" style="border-radius: 14px">
+
+
+
+  
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field" style="padding-top: 15px;"> 
+    <!-- <%= f.label :email %><br /> -->
+    <span class="glyphicon glyphicon-user"style="color:#1565c0;"></span>&nbsp; <%= f.email_field :email, autofocus: true, placeholder: "Enter email",style:"border-radius:4px" %>
+  </div>
+
+
+
+  <div class="field">
+   <!--  <%= f.label :password %><br /> -->
+   <span class="glyphicon glyphicon-lock" style="color:#1565c0;"></span>&nbsp; <%= f.password_field :password, autocomplete: "off" , placeholder:"Enter password",style:"border-radius:4px" %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end -%>
+
+  <div class="actions">
+    <%= f.submit "Ingresar", class:"btn btn-primary btn-lg",style:"border-radius:5px;height:40px;" %> 
+  </div>
+<% end %>
+
+</div>
+
+
+
+
+
+<%= render "devise/shared/links" %>
+
+    </div>
+  </div>
+  
+</div>

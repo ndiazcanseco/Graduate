@@ -1,0 +1,180 @@
+
+<style type="text/css">
+
+input[type="text"]{
+  display: block;
+  margin: 0;
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 18px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  color: black;
+}
+  
+</style>
+
+<div class="contenedor-formulario">
+  <div class="wrap">
+
+  <CENTER>
+  <h4><b>INFORMACIÓN DEL EGRESADO</b><H4>
+  </CENTER>
+<%= @personal_information.user.email%>
+  <div>
+    
+    <div class="field" style="text-align: left">
+    <label >Nombre(s)</label>
+    <input  readonly="readonly" type="text" class="form-control"  value="<%= @personal_information.FirstName %>" >
+    </div>
+
+
+  <div class="field" style="text-align: left;width: 370px;display: inline-block;float:left;">
+  <label >Apellido Paterno</label>
+    <input readonly="readonly" type="text" class="form-control"  value="<%= @personal_information.FirstLastName %>">
+  </div>
+
+
+  <div class="field" style="text-align: left;width: 370px;display: inline-block;float: right;">
+    <label >Apellido Materno</label>
+    <input readonly="readonly" type="text" class="form-control"  value="<%= @personal_information.SecondLastName %>">
+  </div>
+
+</div>
+
+
+
+    
+  
+
+  <div>
+
+
+  <div class="field" style="text-align: left;width: 370px;display: inline-block;">
+    <label >No. de Control</label>
+    <input readonly="readonly" type="text" class="form-control"  value="<%= @personal_information.ControlNumber %>">
+  </div>
+
+
+
+  <div class="field" style="text-align: left;width: 370px;display: inline-block;float: right;">
+    <label >Fecha de Nacimiento</label>
+    <input readonly="readonly" type="text" class="form-control"  value="<%= @personal_information.Birthdate %>">
+
+  </div>
+
+
+  <div class="field" style="text-align: left;width: 370px;display: inline-block;">
+    <label >Curp</label>
+    <input readonly="readonly" type="text" class="form-control"  value="<%= @personal_information.Curp %>">
+  </div>
+
+  <div class="field" style="text-align: left;width: 370px;display: inline-block;float: right;">
+    <label >Teléfono</label>
+    <input readonly="readonly" type="text" class="form-control"  value="<%= @personal_information.Phone %>">
+  </div>
+
+
+
+</div>
+
+
+  
+
+<hr></br>
+
+
+
+
+  <div class="field" style="text-align: left">
+    <label >Domicilio</label>
+    <input readonly="readonly" type="text" class="form-control"  value="<%= @personal_information.Address %>">
+  </div>
+
+
+
+
+<div>
+
+
+  <div class="field" style="text-align: left;width: 250px;display: inline-block;">
+  <label >Colonia</label>
+    <input readonly="readonly" type="text" class="form-control"  value="<%= @personal_information.Unity %>">
+
+  </div>
+
+
+  <div class="field" style="text-align: left;width: 250px;display: inline-block;">
+     <label >Ciudad</label>
+    <input readonly="readonly" type="text" class="form-control"  value="<%= @personal_information.City %>">
+  </div>
+
+
+  <div class="field" style="text-align: left;width: 260px;display: inline-block;float: right;">
+    <label >Estado</label>
+    <input  readonly="readonly" type="text" class="form-control"  value="<%= @personal_information.State %>">
+  </div>
+
+</div><hr></br>
+
+
+  
+<div>  
+
+
+  <div class="field" style="text-align: left;width: 370px;display: inline-block;float: left;">
+    <label >Carrera</label>
+    <input readonly="readonly" type="text" class="form-control"  value="<%= @personal_information.Profession %>">
+  </div>
+
+  
+
+  <div class="field" style="text-align: left;width: 370px;display: inline-block;float: right;">
+    <label >Especialidad</label>
+    <input readonly="readonly" type="text" class="form-control"  value="<%= @personal_information.Specialty %>">
+  </div>
+
+</div>
+
+
+
+
+
+  <div class="field" style="text-align: left;width: 370px;display: inline-block;float: left;">
+    <label >Mes y año de Egreso</label>
+    <input readonly="readonly" type="text" class="form-control"  value="<%= @personal_information.Monthandyear %>">
+  </div>
+
+
+  <div class="field" style="text-align: left;width: 370px;display: inline-block;float: right;">
+    <label >Idioma</label>
+    <input readonly="readonly" type="text" class="form-control"  value="<%= @personal_information.Language %>">
+  </div>
+
+  </BR>
+
+  <div class="field">
+   
+    <label >Habilidades Informaticas</label>
+    <input readonly="readonly" type="text" class="form-control"  value="<%= @personal_information.Computing %>">
+  </div>
+
+
+
+
+<%= link_to 'Editar', edit_personal_information_path(@personal_information) %> |
+<%= link_to 'Atras', personal_informations_path %>
+
+
+
+
+
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @personal_information.Titulo %>
+</p>
+
+
+

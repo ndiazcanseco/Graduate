@@ -1,0 +1,75 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Company Informations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sector</th>
+      <th>Businessactivity</th>
+      <th>Reasonpartner</th>
+      <th>Address</th>
+      <th>Unity</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Cp</th>
+      <th>Phone</th>
+      <th>Cellphone</th>
+      <th>Email</th>
+      <th>Website</th>
+      <th>Boss</th>
+      <th>Area</th>
+      <th>Primarysector</th>
+      <th>Secondarysector</th>
+      <th>Thirdsector</th>
+      <th>Levelstudy</th>
+      <th>Updatecourses</th>
+      <th>Postgraduate</th>
+      <th>Areapostgraduate</th>
+      <th>Socialorganizations</th>
+      <th>Which</th>
+      <th>Committee</th>
+      <th>Recommendation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @company_informations.each do |company_information| %>
+      <tr>
+        <td><%= company_information.Sector %></td>
+        <td><%= company_information.BusinessActivity %></td>
+        <td><%= company_information.ReasonPartner %></td>
+        <td><%= company_information.Address %></td>
+        <td><%= company_information.Unity %></td>
+        <td><%= company_information.City %></td>
+        <td><%= company_information.State %></td>
+        <td><%= company_information.Cp %></td>
+        <td><%= company_information.Phone %></td>
+        <td><%= company_information.CellPhone %></td>
+        <td><%= company_information.Email %></td>
+        <td><%= company_information.Website %></td>
+        <td><%= company_information.Boss %></td>
+        <td><%= company_information.Area %></td>
+        <td><%= company_information.PrimarySector %></td>
+        <td><%= company_information.SecondarySector %></td>
+        <td><%= company_information.ThirdSector %></td>
+        <td><%= company_information.LevelStudy %></td>
+        <td><%= company_information.UpdateCourses %></td>
+        <td><%= company_information.Postgraduate %></td>
+        <td><%= company_information.AreaPostgraduate %></td>
+        <td><%= company_information.SocialOrganizations %></td>
+        <td><%= company_information.Which %></td>
+        <td><%= company_information.Committee %></td>
+        <td><%= company_information.Recommendation %></td>
+        <td><%= link_to 'Show', company_information %></td>
+        <td><%= link_to 'Edit', edit_company_information_path(company_information) %></td>
+        <td><%= link_to 'Destroy', company_information, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Company Information', new_company_information_path %>

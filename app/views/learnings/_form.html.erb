@@ -1,0 +1,134 @@
+<%= form_for(learning) do |f| %>
+  <% if learning.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(learning.errors.count, "error") %> prohibited this learning from being saved:</h2>
+
+      <ul>
+      <% learning.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="contenedor-formulario">
+    <div class="wrap">
+  <HR>
+       <h4><strong>II.  PERTINENCIA Y DISPONIVILIDAD DE MEDIOS Y RECURSOS PARA EL APRENDIZAJE:<br></br> </strong> </h4>
+       <h4>Califique la calidad de la educación proporcionada por el personal docente,asi como el plan de estudiosde la carrera que curso y las condiciones del plantel en cuanto a infraestructura.</h4>
+    </HR>
+
+    <table class="table table-bordered table-striped table-hover">
+ <tr>
+    <th>
+        <div class="field">
+
+        <h4>1.- Calidad de los docentes:</h4>
+        <% question1s ={'Muy Buena' => 'Muy Buena', 'Buena'=> 'Buena','Regular'=> 'Regular', 'Mala' => 'Mala'}%>
+        <fieldset>
+
+          <% lista = question1s %>
+          <% lista.each do |question1|%>
+          <%= f.radio_button :Quality , question1[1] %>
+          <label style="margin-right: 60px;"> <for= "<%= question1[1]%>"><%= question1[0]%></label>
+          <% end %>
+        </fieldset>
+      </div>
+    </th>
+    
+   </tr>   
+    </tr>
+      <th>
+        <div class="field">
+
+        <h4>2.- Plan de estudios:</h4>
+        <% question1s ={'Muy Buena' => 'Muy Buena', 'Buena'=> 'Buena','Regular'=> 'Regular', 'Mala' => 'Mala'}%>
+        <fieldset>
+
+          <% lista = question1s %>
+          <% lista.each do |question1|%>
+          <%= f.radio_button :Studies , question1[1] %>
+          <label style="margin-right: 60px;"> <for= "<%= question1[1]%>"><%= question1[0]%></label>
+          <% end %>
+        </fieldset>
+      </div>
+    </th>
+    </tr>
+    <tr>
+      <th>
+        <div class="field">
+
+        <h4>3.- Oportunidad de participar en proyectos de investigacion y desarrolo:</h4>
+        <% question1s ={'Muy Buena' => 'Muy Buena', 'Buena'=> 'Buena','Regular'=> 'Regular', 'Mala' => 'Mala'}%>
+        <fieldset>
+
+          <% lista = question1s %>
+          <% lista.each do |question1|%>
+          <%= f.radio_button :Projects , question1[1] %>
+          <label style="margin-right: 60px;"> <for= "<%= question1[1]%>"><%= question1[0]%></label>
+          <% end %>
+        </fieldset>
+      </div>
+    </th>
+    </tr>
+    <tr>
+    <th>
+        <div class="field">
+
+        <h4>4.- Enfasis que se le presentaba a la investigación dentro del proceso enseñanza:</h4>
+        <% question1s ={'Muy Buena' => 'Muy Buena', 'Buena'=> 'Buena','Regular'=> 'Regular', 'Mala' => 'Mala'}%>
+        <fieldset>
+
+          <% lista = question1s %>
+          <% lista.each do |question1|%>
+          <%= f.radio_button :Investigation , question1[1] %>
+          <label style="margin-right: 60px;"> <for= "<%= question1[1]%>"><%= question1[0]%></label>
+          <% end %>
+        </fieldset>
+      </div>
+    </th>
+    </tr>
+    <tr>
+     <th>
+        <div class="field">
+
+        <h4>5.- Satisfaccion con las condiciones de estudio(infraestructura):</h4>
+        <% question1s ={'Muy Buena' => 'Muy Buena', 'Buena'=> 'Buena','Regular'=> 'Regular', 'Mala' => 'Mala'}%>
+        <fieldset>
+
+          <% lista = question1s %>
+          <% lista.each do |question1|%>
+          <%= f.radio_button :Infrastructure , question1[1] %>
+          <label style="margin-right: 60px;"> <for= "<%= question1[1]%>"><%= question1[0]%></label>
+          <% end %>
+        </fieldset>
+      </div>
+    </th>
+    </tr>
+    <tr>
+        <th>
+        <div class="field">
+
+        <h4>5.- Experiencia obtenida atraves d la resdencia profecional:</h4>
+        <% question1s ={'Muy Buena' => 'Muy Buena', 'Buena'=> 'Buena','Regular'=> 'Regular', 'Mala' => 'Mala'}%>
+        <fieldset>
+
+          <% lista = question1s %>
+          <% lista.each do |question1|%>
+          <%= f.radio_button :Experience , question1[1] %>
+          <label style="margin-right: 60px;"> <for= "<%= question1[1]%>"><%= question1[0]%></label>
+          <% end %>
+        </fieldset>
+      </div>
+    </th>
+    </tr>
+
+     
+ 
+</table><br></br> 
+   
+
+
+  <div class="actions" class="btn btn-primary"  style="float: right;">
+        <input type="submit" name="guardar" value="Guardar y Continuar"><br></br><br></br>  
+</div></div<% end %> 

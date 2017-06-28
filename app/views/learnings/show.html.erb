@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Quality:</strong>
+  <%= @learning.Quality %>
+</p>
+
+<p>
+  <strong>Studies:</strong>
+  <%= @learning.Studies %>
+</p>
+
+<p>
+  <strong>Projects:</strong>
+  <%= @learning.Projects %>
+</p>
+
+<p>
+  <strong>Investigation:</strong>
+  <%= @learning.Investigation %>
+</p>
+
+<p>
+  <strong>Infrastructure:</strong>
+  <%= @learning.Infrastructure %>
+</p>
+
+<p>
+  <strong>Experience:</strong>
+  <%= @learning.Experience %>
+</p>
+
+<%= link_to 'Edit', edit_learning_path(@learning) %> |
+<%= link_to 'Back', learnings_path %>

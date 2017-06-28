@@ -1,0 +1,28 @@
+<%= stylesheet_link_tag "personal" %>
+
+
+<div class="row center-xs">
+<h3>PERFIL DE EGRESADO</h3>
+</div>
+<div class="menu-nav" style="position:absolute;top: 300px;left:-40px;">
+		<ul>
+			<li style="color: black"><a href="/personal_informations/new" class="btn-egresado">Perfil del Egresado</a></li>
+			<li style="color: black"><a href="/employment_informations/new" class="btn-laboral">Ubicación Laboral</a></li>
+			<li style="color: black"><a href="/company_informations/new" class="btn-empresa">Datos de la Empresa</a></li>
+			
+		</ul>
+	</div>
+
+<div class="contenedor-formulario">
+	<div class="wrap">
+
+
+<%
+@formulario = params[:formulario]
+%>
+
+<%= render 'form', personal_information: @personal_information %>
+</div>
+
+	</div>
+<%= yield %>

@@ -1,0 +1,39 @@
+
+
+<h4><strong>LISTA DE EGRESADOS</strong></h4>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido paterno</th>
+      <th>Apellidomaterno</th>
+      <th>No de control</th>
+      
+      <th>Ver</th>
+      <th>Editar</th>
+      <th>Eliminar</th>
+      
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @personal_informations.each do |personal_information| %>
+      <tr>
+        <td><%= personal_information.FirstName %></td>
+        <td><%= personal_information.FirstLastName %></td>
+        <td><%= personal_information.SecondLastName %></td>
+        <td><%= personal_information.ControlNumber %></td>
+        <td><span class="glyphicon glyphicon-eye-open"></span><%= link_to 'Ver', personal_information %></td>
+        <td><span class="glyphicon glyphicon-edit"></span><%= link_to 'Editar', edit_personal_information_path(personal_information) %></td>
+      <td><span class="glyphicon">&#xe020;</span><%= link_to 'Eliminar', personal_information, method: :delete, data: { confirm: 'Estas seguro que deseas eliminar a esta persona?' } %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Personal Information', new_personal_information_path %>

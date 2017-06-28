@@ -1,0 +1,2 @@
+json.extract! company_information, :id, :Sector, :BusinessActivity, :ReasonPartner, :Address, :Unity, :City, :State, :Cp, :Phone, :CellPhone, :Email, :Website, :Boss, :Area, :PrimarySector, :SecondarySector, :ThirdSector, :LevelStudy, :UpdateCourses, :Postgraduate, :AreaPostgraduate, :SocialOrganizations, :Which, :Committee, :Recommendation, :created_at, :updated_at
+json.url company_information_url(company_information, format: :json)

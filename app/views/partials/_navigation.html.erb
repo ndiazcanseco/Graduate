@@ -1,0 +1,55 @@
+<header style="margin-bottom: 150px;">
+
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+    <%= image_tag "LOGO_ITVO.png", :alt => "ITVO +", :title => "ITVO +",style:"position:relative;left:-50px;top:0px;margin:10px;height:120px"%>
+
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!--<a class="navbar-brand" href="#">Project name</a>-->
+    </div>
+
+
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><%= link_to "ITVO", root_path %></li>
+        <li><%= link_to "Egresados", new_personal_information_path %></li>
+        <li><a>Posgrado</a></li>
+        
+      </ul>
+      
+
+      <ul class="nav navbar-nav navbar-right" style="position: relative;left: 50px;">
+         <% if user_signed_in? %>
+            <li><%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %></li>
+         <%else%>
+
+        <li><%= link_to "Iniciar sesión", new_user_session_path %></li>
+        <li><%= link_to "Crear cuenta", new_user_registration_path %></li>
+        
+         <% end%>
+      </ul>
+
+              <%= image_tag "tec_mex.png", :alt => "tecnm +", :title => "tecnm +",style:"position:absolute;left:38%;top:0px;height:70px"%>
+
+
+
+              <font color="Gray" face="Comic Sans MS,arial">
+                <h4 style="position: relative;top: 80px;font-size: 18px;left: -20px"><b>SISTEMA PARA EL SEGUIMIENTO DE EGRESADOS</b></h4>
+                </font>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
+      </header>
+
+
+
